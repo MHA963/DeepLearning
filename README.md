@@ -1,5 +1,7 @@
 # Deep Learning Course – Information Page
 
+A repo for all Deep learning Course, exercises, and assignments.
+
 ## Overview
 
 * **Duration:** 14 weeks
