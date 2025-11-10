@@ -1,2 +1,12 @@
 dir_to_ignore/
 data
+/__pycache__/
+*.log
+*.tmp
+.DS_Store
+.env
+.vscode/
+.idea/
+node_modules/
+dist/
+build/
