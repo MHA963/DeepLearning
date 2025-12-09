@@ -85,12 +85,10 @@ class Optimised_CNN_LSTM(nn.Module):
         x = x.permute(0, 2, 1)   # (batch, features, seq)
 
         # CNN Block 1: Conv -> BN -> ReLU -> Drop -> Pool
-        # ✅ FIX: Using torch.relu() instead of instantiating nn.ReLU()
         x = torch.relu(self.bn1(self.conv1(x)))
         x = self.pool(self.drop(x))
 
         # CNN Block 2: Conv -> BN -> ReLU -> Drop -> Pool
-        # ✅ FIX: Using torch.relu() instead of instantiating nn.ReLU()
         x = torch.relu(self.bn2(self.conv2(x)))
         x = self.pool(self.drop(x))
 
@@ -106,7 +104,6 @@ class Optimised_CNN_LSTM(nn.Module):
         return torch.sigmoid(x)
 
 # --- 3. Optimised Large CNN-LSTM Model (Renamed from Optimized_CNN_LSTM_Model) ---
-# Increased filter counts (64, 128) and LSTM hidden size (128).
 class Optimised_Large_CNN_LSTM(nn.Module):
     """
     A larger, optimised CNN-LSTM model with increased capacity: 
@@ -120,7 +117,6 @@ class Optimised_Large_CNN_LSTM(nn.Module):
         self.conv2 = nn.Conv1d(64, 128, 3, padding=1)
         self.pool = nn.MaxPool1d(2)
         
-        # Adjusted Dropout rates
         self.dropout1 = nn.Dropout(0.3)
         self.dropout2 = nn.Dropout(0.4)
         
